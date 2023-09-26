@@ -18,14 +18,14 @@
                 <form method="post" action="서버의url" id="loginForm">
                     <label for="userId">ID
                     </label>
-                    <input type="email" name="userName" id="userId" placeholder="Email">
+                    <input type="email" name="userName" id="userId" placeholder="Email" autocomplete="additional-name">
 
                     <label for="userPassword">PASSWORD
                     </label>
                     <input type="password" name="userPassword" id="userPassword" placeholder="password">
 
                     <label for="checkId">
-                        <input type="checkbox" name="" id="checkId">아이디 저장하기
+                        <input type="checkbox" name="checkId" id="checkId">아이디 저장하기
                     </label>
                 </form>
                 <button type="submit" value="Login" id="loginBtn">Login</button>
@@ -36,5 +36,6 @@
        </footer>
     
     </div>
+    <script src="./js/index.js"></script>
 </body>
 </html>
