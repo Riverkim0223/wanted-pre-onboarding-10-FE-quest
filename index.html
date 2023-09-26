@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <link rel="stylesheet" href="./styles.css">
     <title>login</title>
 </head>
@@ -16,19 +17,23 @@
                 <h2>LOGIN</h2>
                 <form method="post" action="서버의url" id="loginForm">
                     <label for="userId">ID
-                        <input type="email" name="userName" id="userId" placeholder="Email">
                     </label>
+                    <input type="email" name="userName" id="userId" placeholder="Email">
+
                     <label for="userPassword">PASSWORD
-                        <input type="password" name="userPassword" id="userPassword" placeholder="password">
                     </label>
+                    <input type="password" name="userPassword" id="userPassword" placeholder="password">
+
                     <label for="checkId">
                         <input type="checkbox" name="" id="checkId">아이디 저장하기
                     </label>
                 </form>
-                <button type="submit" value="Login">로그인하기</button>
+                <button type="submit" value="Login" id="loginBtn">Login</button>
             </div>
         </section>
-       
+       <footer>
+        
+       </footer>
     
     </div>
 </body>
