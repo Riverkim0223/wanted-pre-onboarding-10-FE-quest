@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+
     <title>login</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
                         <input type="checkbox" name="checkId" id="checkId">아이디 저장하기
                     </label>
                 </form>
-                <button type="submit" value="Login" id="loginBtn">Login</button>
+                <button type="submit" value="Login" id="loginBtn" onclick="KakaoLogin()">Login</button>
             </div>
         </section>
        <footer>
@@ -37,5 +38,44 @@
     
     </div>
     <script src="./js/index.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('b341e2bcfc978f0ea8e19615f5e2f9ef');
+        console.log(Kakao.isInitialized());
+        function KakaoLogin(){
+            Kakao.Auth.login({
+                success:function(res){
+                    Kakao.API.request({
+                        url:'/ok',
+                        success:function(res){
+                            console.log(res)
+                        },
+                        fail:function(error){
+                            console.log(error)
+                        },
+                    })
+                },
+                fail:function(error){
+                    console.log(error)
+                },
+            })
+        }
+        //logout
+        function KakaoLogout(){
+            if(KaKao.Auth.getAccessToken()){
+                Kakao.API.request({
+                    url:'/fail',
+                    success:function(res){
+                        console.log(res)
+                    },
+                    fail:function(error){
+                        console.log(error)
+                    },
+                })
+                Kakao.Auth.setAccessToken(undefined)
+            }
+        }
+    </script>
+
 </body>
 </html>
